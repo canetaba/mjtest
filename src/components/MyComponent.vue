@@ -31,12 +31,12 @@ export default {
   data() {
     return {
     items: [ {
-     title:  'Nombre 1',
+     title:  'Juan Perez 1',
       id: 'DAF',
      disabled: false,
     },
       {
-      title:  'Nombre 2',
+      title:  'Juana de Arco',
       id: 'DDT',
       disabled: true,
     },
@@ -50,7 +50,7 @@ export default {
   }
   },
   mounted() {
-    this.selectedClub = {id: null, name: null};
+    this.itemsSelected = {title: null, id: null};
   },
   methods: {
     submit() {
