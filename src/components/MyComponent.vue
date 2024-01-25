@@ -6,11 +6,10 @@
             :items="items"
             density="comfortable"
             label="Escoja el firmante"
+            return-object
             v-model="itemsSelected"
             item-title="title"
-            item-value="id"
-            multiple
-        >
+            item-value="id">
           <template v-slot:item="{ props, item }">
             <v-list-item
                 v-bind="props"
@@ -20,15 +19,17 @@
           </template>
         </v-autocomplete>
       </v-container>
+      <v-btn text color="skyblue" @click="submit">OK</v-btn>
     </v-app>
   </div>
+
 </template>
 
 <script>
 export default {
   name:  'MyComponente',
-  data: () => (
-      {
+  data() {
+    return {
     items: [ {
      title:  'Nombre 1',
       id: 'DAF',
@@ -45,8 +46,16 @@ export default {
         disabled: false,
       }
     ],
-
-
-  }),
+      itemsSelected: {title: null, id: null}
+  }
+  },
+  mounted() {
+    this.selectedClub = {id: null, name: null};
+  },
+  methods: {
+    submit() {
+      console.log(this.selectedClub)
+    }
+  },
 }
 </script>
