@@ -1,24 +1,11 @@
 <template>
-  <div>
-    <v-select
-        :items="items"
-        density="comfortable"
-        label="Escoja el visador"
-    ></v-select>
-
-    <v-select
-        :items="items"
-        density="comfortable"
-        label="Escoja el firmante"
-    ></v-select>
-  </div>
-
-
-  <div>
+   <div>
     <v-app>
       <v-container>
         <v-select
             :items="items"
+            density="comfortable"
+            label="Escoja el firmante"
             v-model="itemsSelected"
             item-title="title"
             item-value="id"
