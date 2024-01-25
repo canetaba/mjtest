@@ -2,7 +2,7 @@
    <div>
     <v-app>
       <v-container>
-        <v-select
+        <v-autocomplete
             :items="items"
             density="comfortable"
             label="Escoja el firmante"
@@ -14,11 +14,11 @@
           <template v-slot:item="{ props, item }">
             <v-list-item
                 v-bind="props"
-                :subtitle="item.raw.department"
+                :subtitle="item.raw.id"
                 :disabled="item.raw.disabled"
             ></v-list-item>
           </template>
-        </v-select>
+        </v-autocomplete>
       </v-container>
     </v-app>
   </div>
@@ -30,17 +30,18 @@ export default {
   data: () => (
       {
     items: [ {
-     title:  'Opción 1',
-      id: 442,
+     title:  'Nombre 1',
+      id: 'DAF',
      disabled: false,
-    }, {
-      title:  'Opción 2',
-      id: 443,
+    },
+      {
+      title:  'Nombre 2',
+      id: 'DDT',
       disabled: true,
     },
       {
-        title:  'Opción 3',
-        id: 444,
+        title:  'Nombre 3',
+        id: 'PRE',
         disabled: false,
       }
     ],
